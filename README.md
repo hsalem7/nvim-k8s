@@ -1,4 +1,4 @@
-# Vim-k8s
+# Nvim-k8s
 Vim-k8s is a [k9s](https://github.com/derailed/k9s) wrapper that will make your life easier when you are working with Kubernetes. You dont need to leave the nvim window anymore to control and debug your kubernetes clusters.
 
 ![alt text](./imgs/nvim-k8s.gif)
