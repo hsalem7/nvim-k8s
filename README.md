@@ -3,10 +3,6 @@ Vim-k8s is a [k9s](https://github.com/derailed/k9s) wrapper that will make your 
 
 # Installation
 
-**Requirements**
-[k9s](https://github.com/derailed/k9s) should be installed on your machine
-
-
 **Using [vim-plug](https://github.com/junegunn/vim-plug)**
 
 ```vimscript

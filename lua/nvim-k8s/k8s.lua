@@ -19,6 +19,25 @@ function K8s.new()
     return self
 end
 
+function K8s:exec()
+    local osName = vim.fn.system('uname -s')
+    print(vim.fn.has("win64"), vim.fn.has("win32"))
+
+    if vim.fn.has("win64") == 1 or vim.fn.has("win32") == 1 then
+        osName = 'Win'
+    end
+
+    if  osName == 'Darwin' then
+        vim.fn.termopen('./bin/mac/k9s')
+    elseif osName == 'Win' then
+        vim.fn.termopen('./bin/win/k9s.exe')
+    elseif osName == 'Linux' then
+        vim.fn.termopen('./bin/linux/k9s')
+    else
+        vim.fn.termopen('k9s')
+    end
+end
+
 function K8s:createBuffer(listed, scratch)
     return vim.api.nvim_create_buf(listed, scratch)
 end
@@ -39,7 +58,7 @@ function K8s:open()
     Window:openWindow(self.buffer, self.width, self.height)
 
     if bufCreated then
-        vim.fn.termopen('k9s')
+        self:exec()
     end
 
      Window:onClose(self, close)
