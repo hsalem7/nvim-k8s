@@ -2,11 +2,7 @@ local k8s = require("nvim-k8s.K8s")
 local vim = vim
 
 local function setupMapping()
-    local keyMap = "π"
-
-    if vim.g.vim_k8s_toggle_key_map then
-        keyMap = vim.g.vim_k8s_toggle_key_map
-    end
+    local keyMap = vim.g.vim_k8s_toggle_key_map or "π"
 
     vim.api.nvim_set_keymap(
         't',
